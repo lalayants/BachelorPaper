@@ -4,11 +4,23 @@
 \end{flushleft}
 \refstepcounter{chapter}
 \addcontentsline{toc}{chapter}{2 Обзор современных подходов к отслеживаю объектов на видеоизображениях}
-
+В этой главе будут подобно рассмотрены следующие вещи:
+\begin{itemize}
+  \item[--] набор данных для сравнения различных алгоритмов друг с другом;
+  \item[--] различные метрики, по которым проводится сравнение;
+  \item[--] принцип работы и основные отличительные особенности выбранных алгоритмов. 
+\end{itemize}
 \section{Набор данных MOT17}
-Тут будет \cite{dendorfer2021motchallenge}.
+\input{./chapters/review/0_mot}
 \section{Метрики для оценивания}
-Тут будут \cite{luiten2021hota, bernardin2008evaluating, ristani2016performance}.
+В этом разделе разбираются основные метрики для оценивания качества отслеживая объектов на видеоизображениях.
+\subsection{Метрика MOTA}
+\input{./chapters/review/1_mota}
+\subsection{Метрика IDF1}
+\input{./chapters/review/2_idf1}
+\subsection{Метрика HOTA}
+\input{./chapters/review/3_hota}
+
 \section{Обзор существующих алгоритмов }
 Тут будут \cite{aharon2022bot, cao2023observation, du2023strongsort, maggiolino2023deep, stadler2023improved, zhang2022bytetrack}.
 
