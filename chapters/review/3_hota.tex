@@ -1,1 +1,42 @@
-\cite{luiten2021hota}
+HOTA \cite{luiten2021hota} была представлена в 2020 году. Авторы поставили своей целью создать подход к оценке качества выполнения задачи отслеживания объектов на изображении, который будет оптимально сочетать в себе положительные черты таких метрик как MOTA, которая при оценке больше учитывает точность детектирования, так и IDF1, которая больше акцентирует внимание на точность идентификации.
+
+Новая метрика, по задумке авторов, позволяет оценить насколько точно построенные алгоритмом отслеживания траектории сопоставляются с размеченными, при этом учитывая ошибки детектирования. Для этого используется вычисление на основе двух разделенных типов ошибок:
+\begin{equation}
+    \label{eq:hota}
+    \text{HOTA} = \sqrt{\text{DetA + AssA}},
+\end{equation}
+где DetA -- точность детектирования объектов алгоритмом, а AssA -- точность ассоциации этих объектов с итоговыми траекториями. 
+
+Для вычисления DetA используется классический подход для оценки точности детектирования
+\begin{equation}
+    \label{eq:detA}
+    \text{DetA} = \frac{\text{DetRe} \times \text{DetPr}}{\text{DetRe} + \text{DetPr} - \text{DetRe} \times \text{DetPr}},
+\end{equation}
+где:
+\begin{equation}
+    \label{eq:detRe}
+    \text{DetRe} = \frac{\text{TP}}{\text{TP} + \text{FN}},
+\end{equation}
+\begin{equation}
+    \label{eq:detPr}
+    \text{DetPr} = \frac{\text{TP}}{\text{TP} + \text{FP}}.
+\end{equation}
+
+Для AssA авторы вводят новый концепт
+\begin{equation}
+    \label{eq:AssA}
+    \text{AssA} = \frac{\text{AssRe} \times \text{AssPr}}{\text{AssRe} + \text{AssPr} - \text{AssRe} \times \text{AssPr}},
+\end{equation}
+где: 
+\begin{equation}
+    \label{eq:AssRe}
+    \text{AssRe} = \frac{1}{\text{TP}} \sum_{c \in {TP}} \frac{\text{TPA(c)}}{\text{TPA(c)} + \text{FNA(c)}},
+\end{equation}
+
+\begin{equation}
+    \label{eq:AssPr}
+    \text{AssRe} = \frac{1}{\text{TP}} \sum_{c \in {TP}} \frac{\text{TPA(c)}}{\text{TPA(c)} + \text{FPA(c)}}.
+\end{equation}
+В формулах \ref{eq:AssRe}-\ref{eq:AssPr}: TPA -- количество правильно идентификационных объектов; FPA -- количество идентификационных объектов, которых не было в разметке; FNA -- количество неидентификационных объектов, которые были в разметке.
+
+Данный подход учитывает точность ассоциаций и выдает оценку ниже, если один объект за время работы отслеживался с различными идентификационными номерами, но его траектория была непрерывна на видео.
