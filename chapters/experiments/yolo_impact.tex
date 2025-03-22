@@ -1,0 +1,53 @@
+Первым экспериментом было решено провести сравнения показателей метрик HOTA, MOTA и IDF1 от размера сети детектора на двух различных размерах изображений. Это исследование поможет определить, насколько значителен вклад увеличения сети детектора и размера изображения. 
+
+Для проведения экспериментов было произведено вычисление показателей качества на наборе данных MOT17 с различными конфигурациями. Результаты исследования представлены на рисунках \ref{fig:yolo_ByteTrack}-\ref{fig:yolo_ImprAssOC}.
+
+По графикам видно, что в целом самая маленькая модель yolov8n на размере изображения 512 на 512 работает по качеству сопоставимо с самой большой yolov8x на размере изображений 312 на 312. 
+Более точно числа представлены для сравнения в таблицах \ref{tab:mean_hota_yolo_size} - \ref{tab:mean_idf1_yolo_size}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{plots/yolo_size_vs_metric/ByteTrack.png}
+    \caption{График зависимости метрик HOTA, MOTA и IDF1 от размера сети детектора для алгоритма ByteTrack}
+    \label{fig:yolo_ByteTrack}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{plots/yolo_size_vs_metric/OC-SORT.png}
+    \caption{График зависимости метрик HOTA, MOTA и IDF1 от размера сети детектора для алгоритма OC-SORT}
+    \label{fig:yolo_OC-SORT}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{plots/yolo_size_vs_metric/Deep OC-SORT.png}
+    \caption{График зависимости метрик HOTA, MOTA и IDF1 от размера сети детектора для алгоритма Deep OC-SORT}
+    \label{fig:yolo_Deep OC-SORT}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{plots/yolo_size_vs_metric/StrongSORT.png}
+    \caption{График зависимости метрик HOTA, MOTA и IDF1 от размера сети детектора для алгоритма StrongSORT}
+    \label{fig:yolo_StrongSORT}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{plots/yolo_size_vs_metric/BoT-SORT.png}
+    \caption{График зависимости метрик HOTA, MOTA и IDF1 от размера сети детектора для алгоритма BoT-SORT}
+    \label{fig:yolo_BoT-SORT}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{plots/yolo_size_vs_metric/ImprAssOC.png}
+    \caption{График зависимости метрик HOTA, MOTA и IDF1 от размера сети детектора для алгоритма ImprAssOC}
+    \label{fig:yolo_ImprAssOC}
+\end{figure}
+\FloatBarrier
+\input{./images/plots/yolo_size_vs_metric/mean_hota_yolo_size.tex}
+\input{./images/plots/yolo_size_vs_metric/mean_mota_yolo_size.tex}
+\input{./images/plots/yolo_size_vs_metric/mean_idf1_yolo_size.tex}
+\FloatBarrier
