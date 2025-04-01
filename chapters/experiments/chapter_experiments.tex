@@ -26,4 +26,35 @@
 \section{Исследование зависимости производительности от количества объектов на видеоизображении}
 \input{./chapters/experiments/object_count_impact.tex}
 
-% \section{Выводы по главе}ч
+\section{Выводы по главе}
+Результаты всех экспериментов были сведены в таблицы, представленные на рисунках \ref{fig:fps_hota_n320}-\ref{fig:fps_hota_s512} на каждом из которых две таблицы: первая содержит данные о скорости работы различных сочетаний алгоритмов с ReID-моделями на Raspberry PI5 с Google Coral TPU; вторая показатель метрики качества HOTA. 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{./plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8n_size320.png}
+  \caption{Таблица производительности и метрики HOTA для yolov8n с размером изображения 320}
+  \label{fig:fps_hota_n320}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{./plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8n_size512.png}
+  \caption{Таблица производительности и метрики HOTA для yolov8n с размером изображения 512}
+  \label{fig:fps_hota_n512}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{./plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8s_size320.png}
+  \caption{Таблица производительности и метрики HOTA для yolov8s с размером изображения 320}
+  \label{fig:fps_hota_s320}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{./plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8s_size512.png}
+  \caption{Таблица производительности и метрики HOTA для yolov8s с размером изображения 512}
+  \label{fig:fps_hota_s512}
+\end{figure}
+\FloatBarrier
