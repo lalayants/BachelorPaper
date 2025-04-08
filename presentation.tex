@@ -13,18 +13,15 @@
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}} % Создание нового типа столбца с центрированным содержимым
 
 \usepackage[labelformat=empty]{caption} % Подключение пакета для настройки подписей и удаление названия "Рисунок"
-\graphicspath{{./images/}{./images/logo/}} % Указание папок, где искать изображения
+\graphicspath{{./images/}} % Указание папок, где искать изображения
 
 \setbeamertemplate{navigation symbols}{} % Удаление навигационных символов на слайдах
 \usepackage{ragged2e} % Подключение пакета для улучшенного выравнивания текста
 \newcommand{\jj}{\righthyphenmin=20 \justifying} % Команда для активации выравнивания по ширине с установкой минимального количества символов в слове перед переносом
 
-
+\date{\today}
 
 \begin{document}
-
-
-
 
 \begin{frame}
   \begin{center}\tiny
@@ -33,16 +30,14 @@
     Факультет систем управления и робототехники
   \end{center}
 
-  \begin{center}
-    \includegraphics[width=0.15\linewidth]{emb}
-  \end{center}
-
   \begin{center}\tiny
-    \textbf{КВАЛИФИКАЦИОННАЯ РАБОТА МАГИСТРА ТЕХНИКА И ТЕХНОЛОГИИ \\ ПО НАПРАВЛЕНИЮ 14040000.62 «ТЕХНИЧЕСКАЯ ФИЗИКА»}\\
+    \textbf{\MakeUppercase{ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА БАКАЛАВРА \\ ПО НАПРАВЛЕНИЮ 15.03.06 <<Мехатроника и робототехника>>}}\\
     \vspace{0.2cm}
-    \textbf{НА ТЕМУ:}\\
+    \textbf{\MakeUppercase{на тему:}}\\
     \vspace{0.1cm}
-    \textbf{<<РОЛЬ ДАЛЬНОДЕЙСТВИЯ ПРИТЯЖЕНИЯ В \\ ДИФФУЗИИ И СПЕКТРАХ ВОЗБУЖДЕНИЙ ПРОСТЫХ ЖИДКОСТЕЙ>>}
+    \textbf{\MakeUppercase{<<Исследование и сравнение современных алгоритмов
+    компьютерного зрения \\ для отслеживания перемещения объектов на видеоизображениях в
+    городской среде>>}}
   \end{center}
 
   \vspace{0.3cm}
@@ -53,8 +48,8 @@
         Выполнил: \\
         \vspace{0.1cm}
         \textbf{Лалаянц Кирилл Артемович}\\
-        336700
         студент группы R34352 \\
+        336700\\
       \end{center}
     \end{column}
 
@@ -71,10 +66,121 @@
 
   \vspace{0.5cm}
   \begin{center}\tiny
-    Москва, $2022$
+    Санкт-Петербург \\
+    $2025$
   \end{center}
 \end{frame}
 
+\begin{frame}{Цель работы и практическая значимость}
+  \begin{itemize}
+    \item \textbf{Цель:} Исследовать возможность запуска методов отслеживания объектов на видеоизображениях на малопроизводительных устройствах с сохранением высокого качества и высокой скоростью обработки.
+    \item \textbf{Практическая значимость:}
+      \begin{itemize}
+        \item Разработка рекомендаций по выбору алгоритмов для реального времени.
+        \item Повышение эффективности систем автономного управления и анализа данных.
+      \end{itemize}
+  \end{itemize}
+  % Дополнительно можно добавить схематическое изображение или пиктограмму, отражающую реальное время и автономность.
+  % \vspace{0.3cm}
+  % \centering
+  % \includegraphics[width=0.3\linewidth]{review/low_power_device.png}
+\end{frame}
+
+
+\begin{frame}{Постановка задачи отслеживания}
+  \begin{itemize}
+    \item Обработка видеоизображений для извлечения информации об объектах:
+      \begin{itemize}
+        \item Детектирование объектов
+        \item Присвоение уникальных идентификаторов
+        \item Сохранение истории перемещений
+      \end{itemize}
+    \item Ключевые подходы:
+      \begin{itemize}
+        \item MOT (Multiple Object Tracking) и SOT (Single Object Tracking)
+        \item Online и offline методы
+        \item Двухкомпонентные системы – оптимальный выбор для маломощных устройств
+      \end{itemize}
+  \end{itemize}
+  % Если имеется диаграмма, иллюстрирующая эти этапы, можно добавить её ниже:
+  % \vspace{0.5cm}
+  % \centering
+  % \includegraphics[width=0.5\linewidth]{path_to_tracking_pipeline_diagram.png}
+\end{frame}
+
+\begin{frame}{Актуальность}
+  \begin{columns}[T]
+    \begin{column}{\textwidth}
+      \textbf{Спортивная аналитика:}
+      \begin{itemize}
+        \item Отслеживание траекторий мяча
+      \end{itemize}
+    \end{column}
+    % \begin{column}{0.5\textwidth}
+    %   \textbf{Зоология:}
+    %   \begin{itemize}
+    %     \item Анализ поведения животных
+    %   \end{itemize}
+    % \end{column}
+  \end{columns}
+  \vspace{0.5cm}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{review/ball_track.png}
+      \small Спортивная аналитика
+    \end{column}
+    % \begin{column}{0.5\textwidth}
+    %   \centering
+    %   \includegraphics[width=\linewidth]{review/animals.png}
+    %   \small Зоология
+    % \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Актуальность}
+  \textbf{Урбанистика:}
+  \begin{itemize}
+    \item Подсчёт автомобилей и анализ движения на городских улицах
+  \end{itemize}
+  \vspace{0.5cm}
+  \centering
+  \includegraphics[width=0.7\linewidth]{review/urban_uav.png}\\
+  \small Урбанистический анализ с использованием БПЛА
+\end{frame}
+
+\begin{frame}{Актуальность}
+  \textbf{Робототехника:}
+  \begin{itemize}
+    \item Обеспечение навигации и безопасности
+    \item Следование за объектом
+  \end{itemize}
+  \vspace{0.5cm}
+  \centering
+  \includegraphics[width=0.7\linewidth]{presentation/f1_car.jpg}\\
+  \small Кадр дрона оператора гонки F1
+\end{frame}
+
+\begin{frame}{Цель работы и практическая значимость}
+  \begin{columns}[T]
+    \begin{column}{0.45\textwidth}
+      \textbf{Проблемы:}
+      \begin{itemize}
+        \item Высокие требования к вычислительным ресурсам
+        \item Задержки при централизованной обработки
+        \item Риски потери данных и сбоев соединения
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \textbf{Решение:}
+      \begin{itemize}
+        \item Использование микрокомпьютера
+        \item Локальная обработка данных в реальном времени
+        \item Повышение автономности и отказоустойчивости системы
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
 
 
 
@@ -90,8 +196,7 @@
     \textbf{Практическая значимость:}
 
     \begin{itemize}
-    \item Численно рассчитана диффузия и спектры на жидкостной бинодали веществ
-    \item Разработан новый метод распознавания фаз, который универсален по отношению к размерности системы и формам кластеров, с сохранением точности расчета на уровне других методов
+    \item Чc
     \end{itemize}
   }
 \end{frame}
@@ -102,16 +207,13 @@
 \begin{frame}{Цель и задачи работы}
   \footnotesize{
 
-    \textbf{Цель работы} -- установить связь дальнодействия притяжения потенциала взаимодействия и спектров возбуждений с транспортными свойствами жидкостей, а также выявить влияние дальнодействия притяжения на скорость нуклеации.
+    \textbf{Цель работы} -- 
 
     \vspace{0.5cm}
 
     \textbf{Задачами работы являются:}
     \begin{itemize}
-    \item Расчет фазовых диаграмм для 2D и 3D систем частиц, взаимодействующих посредством обобщенного потенциала Леннарда-Джонса с различными степенями притяжения.
-    \item Адаптация метода кластеризации данных DBSCAN для изучения молекулярных систем и его сравнение с другими методами.
-    \item Расчет и анализ транспортных свойств и коллективных возбуждений на жидкостных бинодалях.
-    \item Применение нового метода распознавания фаз для изучения скорости нуклеации в переохлажденных системах Леннарда-Джонса с различным дальнодействием притяжения.
+    \item Расчет
     \end{itemize}
   }
 \end{frame}
