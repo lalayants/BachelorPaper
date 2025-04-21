@@ -1,4 +1,6 @@
 \documentclass{beamer} % Использование класса beamer для создания презентации
+\setbeamerfont{framesubtitle}{size=\large}
+
 \usetheme{Boadilla} % Применение темы Boadilla
 
 \usepackage[T2A]{fontenc} % Установка кодировки шрифта
@@ -44,7 +46,7 @@
 
   \begin{columns}
     \begin{column}{0.50\textwidth}
-      \begin{center}\tiny
+      \begin{center}\small
         Выполнил: \\
         \vspace{0.1cm}
         \textbf{Лалаянц Кирилл Артемович}\\
@@ -54,11 +56,11 @@
     \end{column}
 
     \begin{column}{0.50\textwidth}
-      \begin{center}\tiny
+      \begin{center}\small
         Научный руководитель:\\
         \vspace{0.1cm}
         \textbf{Шаветов Сергей Васильевич} \\
-        доцент, к.т.н., заместитель декана ФСУиР\\
+        доцент, к.т.н., заместитель декана ФСУиР,
         начальник ДНИР \\
       \end{center}
     \end{column}
@@ -71,25 +73,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Цель работы и практическая значимость}
-  \begin{itemize}
-    \item \textbf{Цель:} Выполнить сравнительный анализ существующих подходов к отслеживанию объектов в
-    видеопотоке с целью выявления наиболее подходящих для низкопроизводительных
-    устройств алгоритмов на основе показателей производительности и метрик.
-    \item \textbf{Практическая значимость:}
-      \begin{itemize}
-        \item Разработка рекомендаций по выбору алгоритмов для работы в реальном времени.
-        \item Повышение эффективности систем автономного управления и анализа данных.
-      \end{itemize}
-  \end{itemize}
-  % Дополнительно можно добавить схематическое изображение или пиктограмму, отражающую реальное время и автономность.
-  % \vspace{0.3cm}
-  % \centering
-  % \includegraphics[width=0.3\linewidth]{review/low_power_device.png}
-\end{frame}
-
-
-\begin{frame}{Постановка задачи отслеживания}
+\begin{frame}{Задача отслеживания}
   \begin{itemize}
     \item Обработка видеоизображений для извлечения информации об объектах:
       \begin{itemize}
@@ -104,10 +88,6 @@
         \item Двухкомпонентные системы – оптимальный выбор для маломощных устройств
       \end{itemize}
   \end{itemize}
-  % Если имеется диаграмма, иллюстрирующая эти этапы, можно добавить её ниже:
-  % \vspace{0.5cm}
-  % \centering
-  % \includegraphics[width=0.5\linewidth]{path_to_tracking_pipeline_diagram.png}
 \end{frame}
 
 \begin{frame}{Актуальность}
@@ -115,15 +95,9 @@
     \begin{column}{\textwidth}
       \textbf{Спортивная аналитика:}
       \begin{itemize}
-        \item Отслеживание траекторий мяча
+        \item Отслеживание траектории мяча
       \end{itemize}
     \end{column}
-    % \begin{column}{0.5\textwidth}
-    %   \textbf{Зоология:}
-    %   \begin{itemize}
-    %     \item Анализ поведения животных
-    %   \end{itemize}
-    % \end{column}
   \end{columns}
   \vspace{0.5cm}
   \begin{columns}
@@ -132,11 +106,6 @@
       \includegraphics[width=\linewidth]{review/ball_track.png}
       \small Спортивная аналитика
     \end{column}
-    % \begin{column}{0.5\textwidth}
-    %   \centering
-    %   \includegraphics[width=\linewidth]{review/animals.png}
-    %   \small Зоология
-    % \end{column}
   \end{columns}
 \end{frame}
 
@@ -163,7 +132,7 @@
   \small Кадр дрона оператора гонки F1
 \end{frame}
 
-\begin{frame}{Цель работы и практическая значимость}
+\begin{frame}{Проблемы}
   \begin{columns}[T]
     \begin{column}{0.45\textwidth}
       \textbf{Проблемы:}
@@ -184,40 +153,112 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}{Цель работы и практическая значимость}
+  \begin{itemize}
+    \item \textbf{Цель:} Выполнить сравнительный анализ существующих подходов к отслеживанию объектов в
+    видеопотоке с целью выявления наиболее подходящих для низкопроизводительных
+    устройств алгоритмов на основе показателей производительности и метрик.
+    \item \textbf{Практическая значимость:}
+      \begin{itemize}
+        \item Разработка рекомендаций по выбору алгоритмов для работы в реальном времени.
+        \item Повышение эффективности систем автономного управления и анализа данных.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
 
+\begin{frame}{Задачи}
+  Задачи решаемые в ВКР:
+  \begin{enumerate}
+    \item аналитический обзор существующих алгоритмов;
+    \item подготовка стенда для апробации;
+    \item подготовка экспериментов для сравнения различных алгоритмов на основании метрик HOTA, MOTA, IDF1 и показателей производительности;
+    \item анализ полученных результатов и выработка рекомендации.
+\end{enumerate}
+\end{frame}
 
-\begin{frame}{Актуальность}
-  \footnotesize{
+\begin{frame}
+  \frametitle{Аналитический обзор}
+  \framesubtitle{Датасет MOT17}
+  \begin{itemize}
+    \item 14 видео сцен с пешеходами в реальной городской среде.
+    \item Сцены с разным углом съёмки, плотностью толпы, освещением.
+    \item Есть аннотации координат и ID на каждый кадр.
+    \item Применяется как стандарт для оценки трекеров.
+  \end{itemize}
+  \centering
+  \includegraphics[width=0.7\linewidth]{images/review/MOT17_1.jpg}\\
+  \small Пример изображения из MOT17.
+\end{frame}
 
-    \textbf{Актуальность:}
+\begin{frame}
+  \frametitle{Аналитический обзор}
+  \framesubtitle{Метрики HOTA, MOTA, IDF1}
+  \begin{itemize}
+    \item \textbf{MOTA} — как хорошо найдены все объекты.
+    \item \textbf{IDF1} — насколько трекер сохраняет ID.
+    \item \textbf{HOTA} — баланс между нахождением и сохранением ID.
+  \end{itemize}
+  \centering
+  \includegraphics[width=0.7\linewidth]{images/presentation/metrics.png}\\
+  \small Наглядный пример отличия метрик.
+\end{frame}
 
-    Остаются открытыми такие важные вопросы, как влияние потенциала взаимодействия между частицами на температурную зависимость коэффициента диффузии и насколько важны корреляции между спектрами возбуждения частиц и транспортными свойствами, а также, какую роль играет дальнодействие притяжения в скорости нуклеации в переохлажденных системах
+\begin{frame}
+  \frametitle{Аналитический обзор}
+  \framesubtitle{Сравнение алгоритмов (1/2)}
+  \begin{itemize}
+    \item \textbf{ByteTrack:} ассоциация по IoU, учитываются слабые детекции. Высокая полнота, но возможны ошибки идентичности.
+    \item \textbf{OC-SORT:} расширенный Kalman-фильтр, учёт нескольких прошлых наблюдений. Нет ReID, но устойчив к кратким пропаданиям.
+    \item \textbf{BoT-SORT:} IoU + ReID, улучшенный Kalman. Отличное качество идентификации, стабилен в толпе.
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Аналитический обзор}
+  \framesubtitle{Сравнение алгоритмов (2/2)}
+  \begin{itemize}
+    \item \textbf{StrongSORT:} мощная ReID, глобальное связывание треков. Высокий IDF1, но требователен к ресурсам.
+    \item \textbf{ImprAssOC:} единая ассоциация по всем детекциям, ReID + движение. Лучше сопоставляет при окклюзиях.
+    \item \textbf{Deep OC-SORT:} OC-SORT + ReID + учёт движения камеры. Хорошо сохраняет ID при движущемся фоне.
+  \end{itemize}
+\end{frame}
 
-    \vspace{1cm}
-
-    \textbf{Практическая значимость:}
-
-    \begin{itemize}
-    \item Чc
-    \end{itemize}
-  }
+\begin{frame}
+  \frametitle{Cтенд для апробации}
+  \framesubtitle{Выбор микрокомпьютера}
+  \begin{itemize}
+      \item \textbf{Nvidia Jetson} – высокая производительность, однако дорогой, тяжёлый и мало распространённый в РФ.
+      \item \textbf{Orange Pi} – аналог Raspberry Pi, но с худшей поддержкой и меньшей доступностью.
+      \item \textbf{Raspberry Pi} – оптимальный выбор: относительно недорогой, лёгкий (50 г), энергоэффективный, широко доступен.
+  \end{itemize}
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Cтенд для апробации}
+  \framesubtitle{Выбор вычислительного модуля}
+  \textbf{TPU} -- специализированный вычислительный модуль для параллельных вычислений тензоров.
+  \begin{itemize}
+      % \item \textbf{Hailo} – более новый и мощный, но требует переписывания кода;
+      \item \textbf{Google Coral} – проверенное решение: требует лишь конвертации весов модели в специальный формат; выпускается в различных форм-факторах (M.2, Mini-PCIe, USB).
+  \end{itemize}
+  \centering
+  \includegraphics[width=0.5\linewidth]{images/presentation/tpu.png}\\
+  \small Google Coral на плате расширения.
+\end{frame}
 
 
-\begin{frame}{Цель и задачи работы}
-  \footnotesize{
-
-    \textbf{Цель работы} -- 
-
-    \vspace{0.5cm}
-
-    \textbf{Задачами работы являются:}
-    \begin{itemize}
-    \item Расчет
-    \end{itemize}
-  }
+\begin{frame}
+  \frametitle{Cтенд для апробации}
+  \framesubtitle{Аппаратная часть}
+  \begin{itemize}
+      \item По результатам анализа выбраны компоненты для экспериментального стенда:
+      \begin{itemize}
+          \item \textbf{Микрокомпьютер:} Raspberry Pi 5 (8 ГБ);
+          \item \textbf{Вычислительный модуль:} Google Coral Dual TPU;
+          \item \textbf{Плата расширения:} Pineboards AI Dual.
+      \end{itemize}
+      \item Цена комплекта ~28000 рублей, вес ~0.1 кг -- подходит для автономных устройств.
+  \end{itemize}
 \end{frame}
 
 
