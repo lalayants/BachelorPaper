@@ -273,33 +273,35 @@
     % Placeholder: график метрик vs размер сети и разрешение
     \centering
     \includegraphics[width=0.7\linewidth]{images/plots/yolo_size_vs_metric/ByteTrack.png}\\
-    \small Результаты эксперимента для ByteTrack.
+    \small Результаты эксперимента для алгоритма ByteTrack.
 \end{frame}
 
 \begin{frame}
   \frametitle{Эксперименты}
   \framesubtitle{Выбор модели ReID}
   \begin{itemize}
+    \item ReID модель (англ.Re-identification) -– нейронная сеть,задачей которой
+    является исключительно создание векторов значений, позволяющих отличить объекты одного класса друг от друга.
     \item Значительного влияния ReID модель не оказывает. Показатели качества незначительно колеблются.
   \end{itemize}
   % Placeholder: метрики IDF1, HOTA для разных ReID
   \centering
   \includegraphics[width=0.7\linewidth]{images/plots/yolo_size_and_reid_vs_metric/BoT-SORT.png}\\
-  \small Результаты эксперимента для BoT-SORT.
+  \small Результаты эксперимента для алгоритма BoT-SORT.
 \end{frame}
 
 \begin{frame}
   \frametitle{Эксперименты}
-  \framesubtitle{Влияние FPS видеопотока}
+  \framesubtitle{Влияние частоты кадров видеопотока видеопотока}
   \begin{itemize}
     \item Метрики значительно улучшаются до 5 кадров/с
-    \item 5-11 FPS — менее выраженный рост
-    \item Выше 11 FPS нет значимого улучшения
+    \item 5-11 кадров/с — менее выраженный рост
+    \item Выше 11 кадров/с нет значимого улучшения
   \end{itemize}
   % Placeholder: график HOTA, MOTA от FPS
   \centering
   \includegraphics[width=0.7\linewidth]{images/plots/fps_vs_metric/ByteTrack.png}\\
-  \small Результаты эксперимента для ByteTrack.
+  \small Результаты эксперимента для алгоритма ByteTrack.
 \end{frame}
 
 \begin{frame}
@@ -307,8 +309,8 @@
   \framesubtitle{Количество объектов в кадре}
   \input{./images/plots/correlations/correlation_fps_objectcount.tex}
   \begin{itemize}
-    \item ByteTrack, OC-SORT — демонстрируют почти нулевую корреляцию, лучший выбор при насыщенной объектами сцене.
-    \item ReID-трекеры теряют FPS при росте числа целей.
+    \item Алгоримты ByteTrack, OC-SORT — демонстрируют почти нулевую корреляцию, лучший выбор при насыщенной объектами сцене.
+    \item трекеры с ReID-моделями теряют FPS при росте числа целей.
   \end{itemize}
 
 \end{frame}
@@ -328,9 +330,9 @@
   \begin{itemize}
     \item Использование RP5 c TPU позволяет запустить современные алгоритмы.
     \item YOLOv8n выигрывает благодаря скорости работы.
-    \item ByteTrack наиболее стабильный результат благодаря высокой частоте работы.
-    \item ImprAssOC и StrongSORT показывают чуть более высокие показатели качества при использовании YOLOv8s в паре с OSNet X0.25 на изображении размера 512. Рекомендуются при медленном движении малого количества объектов (не более 5).
-    \item OC-Sort, BoT-SORT и DeepOC-SORT не рекомендуются к использованию.
+    \item Алгоритм ByteTrack наиболее стабильный результат благодаря высокой частоте работы.
+    \item Алгоритмы ImprAssOC и StrongSORT показывают чуть более высокие показатели качества при использовании YOLOv8s в паре с OSNet X0.25 на изображении размера 512. Рекомендуются при медленном движении малого количества объектов (не более 5).
+    \item Алгоритмы OC-Sort, BoT-SORT и DeepOC-SORT не рекомендуются к использованию.
   \end{itemize}
 \end{frame}
 
@@ -350,3 +352,23 @@
 \end{frame}
 
 \end{document}
+
+% TODO:
+% Sergei Shavetov, [4/24/25 7:38 AM]
+% 21 слайд - добавить к названиям слово Алгоритм или Алгоритмы
+
+% Sergei Shavetov, [4/24/25 7:39 AM]
+% Пояснить конкретными примерами, где можно и нужно использовать
+
+% Sergei Shavetov, [4/24/25 7:40 AM]
+% 13 слайд - зачем именно микрокомпьютер? В постановке задачи об этом не было сказано. Может быть сервер или датпцентр подойдет?
+
+% Sergei Shavetov, [4/24/25 7:41 AM]
+% 11 слайд - пояснить, что такое IoU, ReID, и почему Kalman на фнглийском, хотя в русском есть всем понятное Фильтр Калмана
+
+% DONE:
+% Sergei Shavetov, [4/24/25 7:37 AM]
+% 17 слайд - поянить что такое ReID
+
+% Sergei Shavetov, [4/24/25 7:37 AM]
+% 18 слайд - поянить что такое FPS
