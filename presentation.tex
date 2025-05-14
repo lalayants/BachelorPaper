@@ -74,41 +74,58 @@
   \end{center}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Информация для предзащиты}
+  \framesubtitle{Антиплагиат}
+  \centering
+  \includegraphics[width=0.8\linewidth]{images/presentation/antiplagiat.png}\\
+  \small Результаты первой проверки на антиплагиат.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Информация для предзащиты}
+  \framesubtitle{Модуль практики}
+  \centering
+  \includegraphics[width=1\linewidth]{images/presentation/practice.png}\\
+  \small Оценка за практику.
+\end{frame}
+
 \begin{frame}{Задача отслеживания}
   \begin{itemize}
     \item Обработка видеоизображений для извлечения информации об объектах:
       \begin{itemize}
-        \item Детектирование объектов
-        \item Присвоение уникальных идентификаторов
-        \item Сохранение истории перемещений
+        \item детектирование объектов
+        \item присвоение уникальных идентификаторов
+        \item сохранение истории перемещений
       \end{itemize}
     \item Ключевые подходы:
       \begin{itemize}
-        \item MOT (Multiple Object Tracking) и SOT (Single Object Tracking)
-        \item Online и offline методы
-        \item Двухкомпонентные системы – оптимальный выбор для маломощных устройств
+        \item двухкомпонентные (ReID\footnote{ReID-модель (англ. Re-identification) -- нейронная сеть, задачей которой является исключительно создание векторов значений, позволяющих отличить объекты одного класса друг от друга.} + детектор) и однокомпонентные системы
+        \item online и offline методы
+        \item MOT\footnote{Отслеживание нескольких объектов (англ. Multiple Object Tracking)} и SOT\footnote{Отслеживание одного объекта (англ. Single Object Tracking)}
       \end{itemize}
+
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Актуальность}
-  \begin{columns}[T]
-    \begin{column}{\textwidth}
-      \textbf{Спортивная аналитика:}
-      \begin{itemize}
-        \item Отслеживание траектории мяча
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \vspace{0.5cm}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{review/ball_track.png}
-      \small Спортивная аналитика
-    \end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Актуальность}
+%   \begin{columns}[T]
+%     \begin{column}{\textwidth}
+%       \textbf{Спортивная аналитика:}
+%       \begin{itemize}
+%         \item Отслеживание траектории мяча
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+%   \vspace{0.5cm}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}
+%       \centering
+%       \includegraphics[width=\linewidth]{review/ball_track.png}
+%       \small Спортивная аналитика
+%     \end{column}
+%   \end{columns}
+% \end{frame}
 
 \begin{frame}{Актуальность}
   \textbf{Урбанистика:}
@@ -124,7 +141,7 @@
 \begin{frame}{Актуальность}
   \textbf{Робототехника:}
   \begin{itemize}
-    \item Обеспечение навигации и безопасности
+    % \item Обеспечение навигации и безопасности
     \item Следование за объектом
   \end{itemize}
   \vspace{0.5cm}
@@ -162,7 +179,7 @@
     \item \textbf{Практическая значимость:}
       \begin{itemize}
         \item Разработка рекомендаций по выбору алгоритмов для работы в реальном времени.
-        \item Повышение эффективности систем автономного управления и анализа данных.
+        % \item Улучшение систем автономного управления и анализа данных.
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -210,8 +227,7 @@
   \begin{itemize}
     \item \textbf{ByteTrack:} ассоциация по IoU (сопоставление по максимизации совпадения площадей найденного объекта с известными), учитываются слабые детекции. Высокая полнота, но возможны ошибки идентичности.
     \item \textbf{OC-SORT:} меньшая чувствительность к шумам; откат и обновления состояния фильтра Калмана при кратковременной потери объекта, учёт нескольких прошлых наблюдений.
-    \item \textbf{BoT-SORT:} IoU + ReID-модель (англ. Re-identification -- нейронная сеть, задачей которой
-    является исключительно создание векторов значений, позволяющих отличить объекты одного класса друг от друга), улучшенный вектор состояния фильтра Калмана.
+    \item \textbf{BoT-SORT:} IoU + ReID-модель, улучшенный вектор состояния фильтра Калмана.
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -224,29 +240,29 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Cтенд для апробации}
-  \framesubtitle{Выбор микрокомпьютера}
-  \begin{itemize}
-      \item \textbf{Nvidia Jetson} – высокая производительность, однако дорогой, тяжёлый и мало распространённый в РФ.
-      \item \textbf{Orange Pi} – аналог Raspberry Pi, но с худшей поддержкой и меньшей доступностью.
-      \item \textbf{Raspberry Pi} – оптимальный выбор: относительно недорогой, лёгкий (50 г), энергоэффективный, широко доступен.
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Cтенд для апробации}
+%   \framesubtitle{Выбор микрокомпьютера}
+%   \begin{itemize}
+%       \item \textbf{Nvidia Jetson} – высокая производительность, однако дорогой, тяжёлый и мало распространённый в РФ.
+%       \item \textbf{Orange Pi} – аналог Raspberry Pi, но с худшей поддержкой и меньшей доступностью.
+%       \item \textbf{Raspberry Pi} – оптимальный выбор: относительно недорогой, лёгкий (50 г), энергоэффективный, широко доступен.
+%   \end{itemize}
+% \end{frame}
 
 
-\begin{frame}
-  \frametitle{Cтенд для апробации}
-  \framesubtitle{Выбор вычислительного модуля}
-  \textbf{TPU} -- специализированный вычислительный модуль для параллельных вычислений тензоров.
-  \begin{itemize}
-      % \item \textbf{Hailo} – более новый и мощный, но требует переписывания кода;
-      \item \textbf{Google Coral} – проверенное решение: требует лишь конвертации весов модели в специальный формат; выпускается в различных форм-факторах (M.2, Mini-PCIe, USB).
-  \end{itemize}
-  \centering
-  \includegraphics[width=0.5\linewidth]{images/presentation/tpu.png}\\
-  \small Google Coral на плате расширения.
-\end{frame}
+% \begin{frame}
+%   \frametitle{Cтенд для апробации}
+%   \framesubtitle{Выбор вычислительного модуля}
+%   \textbf{TPU} -- специализированный вычислительный модуль для параллельных вычислений тензоров.
+%   \begin{itemize}
+%       % \item \textbf{Hailo} – более новый и мощный, но требует переписывания кода;
+%       \item \textbf{Google Coral} – проверенное решение: требует лишь конвертации весов модели в специальный формат; выпускается в различных форм-факторах (M.2, USB).
+%   \end{itemize}
+%   \centering
+%   \includegraphics[width=0.5\linewidth]{images/presentation/tpu.png}\\
+%   \small Google Coral на плате расширения.
+% \end{frame}
 
 
 \begin{frame}
@@ -260,12 +276,16 @@
           \item \textbf{Плата расширения:} Pineboards AI Dual.
       \end{itemize}
       \item Цена комплекта ~28000 рублей, вес ~0.1 кг -- подходит для автономных устройств.
+      
+      \centering
+  \includegraphics[width=0.5\linewidth]{images/presentation/tpu.png}\\
+  \small Google Coral на плате расширения.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Эксперименты}
-    \framesubtitle{Влияние размера сети детектора}
+    \framesubtitle{1. Влияние размера сети детектора на показатели качества}
     \begin{itemize}
       \item Большая модель YOLOv8 → выше HOTA, MOTA, IDF1.
       \item Увеличение разрешения изображения даёт больший прирост, чем размер модели.
@@ -279,7 +299,7 @@
 
 \begin{frame}
   \frametitle{Эксперименты}
-  \framesubtitle{Выбор ReID-модели}
+  \framesubtitle{2. Влияние ReID-модели на показатели качества}
   \begin{itemize}
     \item Значительного влияния ReID-модель не оказывает. Показатели качества незначительно колеблются.
   \end{itemize}
@@ -291,7 +311,7 @@
 
 \begin{frame}
   \frametitle{Эксперименты}
-  \framesubtitle{Влияние частоты кадров видеопотока}
+  \framesubtitle{3. Влияние частоты кадров видеопотока на показатели качества}
   \begin{itemize}
     \item Метрики значительно улучшаются до 5 кадров/с
     \item 5-11 кадров/с — менее выраженный рост
@@ -305,7 +325,7 @@
 
 \begin{frame}
   \frametitle{Эксперименты}
-  \framesubtitle{Количество объектов в кадре}
+  \framesubtitle{4. Влияние количества объектов в кадре на частоту работы}
   \input{./images/plots/correlations/correlation_fps_objectcount.tex}
   \begin{itemize}
     \item Алгоритмы ByteTrack, OC-SORT — демонстрируют почти нулевую корреляцию, лучший выбор при насыщенной объектами сцене.
@@ -317,6 +337,8 @@
 \begin{frame}
   \frametitle{Эксперименты}
   \framesubtitle{Тепловые карты по результатам экспериментов}
+  Две тепловые карты: с частотой работы и с метрикой HOTA для каждой пары алгоритма и ReID-модели. Чем ближе цвет ячейки к желтому -- тем лучше результат.
+
   \centering
   \includegraphics[width=\linewidth]{images/plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8n_size512.png}\\
   \small Тепловая карта для YOLOv8n на размере изображения 512.
@@ -327,10 +349,10 @@
   \frametitle{Анализ полученных результатов}
   \framesubtitle{Выводы по результатам экспериментов}
   \begin{itemize}
-    \item Использование RP5 c TPU позволяет запустить современные алгоритмы.
+    % \item Использование RP5 c TPU позволяет запустить современные алгоритмы.
     \item YOLOv8n выигрывает благодаря скорости работы.
-    \item Алгоритм ByteTrack наиболее стабильный результат благодаря высокой частоте работы. Подходит для сцен с большой плотностью объектов, например, подсчета пешеходов на улице.
-    \item Алгоритмы ImprAssOC и StrongSORT показывают наиболее высокие показатели качества при использовании в паре с OSNet X0.25 на изображении размера 512. Рекомендуются при медленном движении малого количества объектов (не более 5, например, очередь в магазине, аквариум с небольшим количеством рыб).
+    \item Алгоритм ByteTrack наиболее стабильный результат благодаря высокой частоте работы, имеет потенциал для увеличения качества изображения. Подходит для сцен с большой плотностью объектов, например, подсчета пешеходов на улице.
+    \item Алгоритмы ImprAssOC и StrongSORT показывают высокие показатели качества при использовании в паре с OSNet X0.25 на изображении размера 512. Могут быть использованы при медленном движении малого (не более 5) количества объектов, например, очередь в магазине.
     \item Алгоритмы OC-Sort, BoT-SORT и DeepOC-SORT не рекомендуются к использованию.
   \end{itemize}
 \end{frame}
@@ -340,8 +362,8 @@
     \item Изучены современные алгоритмы трекинга и их применимость на маломощных устройствах.
     \item Собран экспериментальный стенд на Raspberry Pi 5 с TPU.
     \item Проведены тесты на MOT17: сравнение 6 алгоритмов по метрикам качества и скорости.
-    \item Проведены анализ полученных результатов.
-    \item Задачи выполнены, цель достигнута — выявлены эффективные решения для работы в реальном времени на низкопроизводительных устройствах.
+    \item Проведен анализ полученных результатов.
+    \item Задачи выполнены, цель достигнута — выявлены решения подходящие для работы в реальном времени на низкопроизводительных устройствах.
   \end{itemize}
 \end{frame}
 
