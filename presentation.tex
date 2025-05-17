@@ -74,22 +74,6 @@
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Информация для предзащиты}
-  \framesubtitle{Антиплагиат}
-  \centering
-  \includegraphics[width=0.8\linewidth]{images/presentation/antiplagiat.png}\\
-  \small Результаты первой проверки на антиплагиат.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Информация для предзащиты}
-  \framesubtitle{Модуль практики}
-  \centering
-  \includegraphics[width=1\linewidth]{images/presentation/practice.png}\\
-  \small Оценка за практику.
-\end{frame}
-
 \begin{frame}{Задача отслеживания}
   \begin{itemize}
     \item Обработка видеоизображений для извлечения информации об объектах:
@@ -329,7 +313,7 @@
   \input{./images/plots/correlations/correlation_fps_objectcount.tex}
   \begin{itemize}
     \item Алгоритмы ByteTrack, OC-SORT — демонстрируют почти нулевую корреляцию, лучший выбор при насыщенной объектами сцене.
-    \item трекеры с ReID-моделями теряют FPS при росте числа целей.
+    \item Трекеры с ReID-моделями теряют FPS при росте числа объектов.
   \end{itemize}
 
 \end{frame}
@@ -357,17 +341,6 @@
   \end{center}
   }
   \small Сводная таблица для YOLOv8n на размере изображения 512.
-  % \small{
-  % \begin{center}
-  %   \begin{tabular}{ |c|c|c|c|c|c|c| } 
-  %    \hline
-  %     & ByteTrack & ImprAssOC & StrongSORT & BoT-SORT & OC-SORT & DeepOC-SORT \\ 
-  %   Гц & 22.0 & 5.4 & 4.8 & 5.3 & 17.9 & 4.4 \\ 
-  %   HOTA & 39.6 & 40.3 & 39.9 & 38.0 & 37.5 & 35.4 \\ 
-  %    \hline
-  %   \end{tabular}
-  % \end{center}
-  % }
   % \includegraphics[width=\linewidth]{images/plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8n_size512.png}\\
   % \small Тепловая карта для YOLOv8n на размере изображения 512.
 \end{frame}
@@ -381,7 +354,7 @@
     \item YOLOv8n выигрывает благодаря скорости работы.
     \item Алгоритм ByteTrack наиболее стабильный результат благодаря высокой частоте работы, имеет потенциал для увеличения качества изображения. Подходит для сцен с большой плотностью объектов, например, подсчета пешеходов на улице.
     \item Алгоритмы ImprAssOC и StrongSORT показывают высокие показатели качества при использовании в паре с OSNet X0.25 на изображении размера 512. Могут быть использованы при медленном движении малого (не более 5) количества объектов, например, очередь в магазине.
-    \item Алгоритмы OC-Sort, BoT-SORT и DeepOC-SORT не рекомендуются к использованию.
+    \item Алгоритмы OC-Sort, BoT-SORT и DeepOC-SORT показали худшие результаты.
   \end{itemize}
 \end{frame}
 
