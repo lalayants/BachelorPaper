@@ -292,7 +292,7 @@
       \item Увеличение разрешения изображения даёт больший прирост, чем размер модели.
       % \item Оптимум: YOLOv8n с разрешением 512 – хорошее качество при высокой скорости.
     \end{itemize}
-    % Placeholder: график метрик vs размер сети и разрешение
+    
     \centering
     \includegraphics[width=0.7\linewidth]{images/plots/yolo_size_vs_metric/ByteTrack.png}\\
     \small Результаты эксперимента для алгоритма ByteTrack.
@@ -304,6 +304,7 @@
   \begin{itemize}
     \item Значительного влияния ReID-модель не оказывает. Показатели качества незначительно колеблются.
   \end{itemize}
+
   \centering
   \includegraphics[width=0.7\linewidth]{images/plots/yolo_size_and_reid_vs_metric/BoT-SORT.png}\\
   \small Результаты эксперимента для алгоритма BoT-SORT.
@@ -327,7 +328,7 @@
   \framesubtitle{4. Влияние количества объектов в кадре на частоту работы}
   \input{./images/plots/correlations/correlation_fps_objectcount.tex}
   \begin{itemize}
-    \item Алгоритмы ByteTrack, OC-SORT — демонстрируют почти нулевую корреляцию, лучший выбор при насыщенной объектами сцене.
+    \item Алгоритмы ByteTrack, OC-SORT — лучший выбор для насыщенной объектами сцены.
     \item Трекеры с ReID-моделями теряют FPS при росте числа объектов.
   \end{itemize}
 
