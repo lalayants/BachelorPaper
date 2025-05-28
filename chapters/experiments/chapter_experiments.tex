@@ -1,0 +1,60 @@
+\newpage
+\begin{flushleft}
+  \textbf{\large 4 Проведение экспериментальной апробации}
+\end{flushleft}
+\refstepcounter{chapter}
+\addcontentsline{toc}{chapter}{4 Проведение экспериментальной апробации}
+В этой главе для всестороннего анализа качества работы алгоритмов на основе показаний метрик MOTA, HOTA и IDF1 и производительности будут описаны и проведены следующие эксперименты:
+\begin{itemize}
+  \item[--] исследование влияния размера сети детектора;
+  \item[--] исследование влияния различных ReID моделей;
+  \item[--] исследование влияния частоты кадров видеоизображения;
+  \item[--] исследование влияния количества отслеживаемых объектов на производительность.
+\end{itemize}
+
+
+\section{Исследование зависимости показателей качества от размера сети детектора}
+\input{./chapters/experiments/yolo_impact.tex}
+
+
+\section{Исследование зависимости показателей качества от размера ReID модели}
+\input{./chapters/experiments/reid_impact.tex}
+
+\section{Исследование зависимости показателей качества от частоты кадров видеоизображения}
+\input{./chapters/experiments/fps_impact.tex}
+
+\section{Исследование зависимости производительности от количества объектов на видеоизображении}
+\input{./chapters/experiments/object_count_impact.tex}
+
+\section{Выводы по главе}
+Результаты всех экспериментов были сведены в таблицы, представленные на рисунках \ref{fig:fps_hota_n320}-\ref{fig:fps_hota_s512} на каждом из которых две таблицы: первая содержит данные о скорости работы различных сочетаний алгоритмов с ReID-моделями на Raspberry Pi 5 с Google Coral TPU; вторая -- показатель метрики качества HOTA. 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{./plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8n_size320.png}
+  \caption{Таблица производительности и метрики HOTA для yolov8n с размером изображения 320}
+  \label{fig:fps_hota_n320}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{./plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8n_size512.png}
+  \caption{Таблица производительности и метрики HOTA для yolov8n с размером изображения 512}
+  \label{fig:fps_hota_n512}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{./plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8s_size320.png}
+  \caption{Таблица производительности и метрики HOTA для yolov8s с размером изображения 320}
+  \label{fig:fps_hota_s320}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{./plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8s_size512.png}
+  \caption{Таблица производительности и метрики HOTA для yolov8s с размером изображения 512}
+  \label{fig:fps_hota_s512}
+\end{figure}
+\FloatBarrier

@@ -1,0 +1,51 @@
+\newpage
+\begin{flushleft}
+  \textbf{\large 2 Обзор современных подходов к отслеживанию объектов на видеоизображениях}
+\end{flushleft}
+\refstepcounter{chapter}
+\addcontentsline{toc}{chapter}{2 Обзор современных подходов к отслеживанию объектов на видеоизображениях}
+В этой главе будут подробно рассмотрены следующие вещи:
+\begin{itemize}
+  \item[--] набор данных для сравнения различных алгоритмов друг с другом;
+  \item[--] различные метрики, по которым проводится сравнение;
+  \item[--] принцип работы и основные отличительные особенности выбранных алгоритмов. 
+\end{itemize}
+\section{Набор данных MOT17}
+\input{./chapters/review/0_mot}
+\section{Метрики для оценивания}
+В этом разделе разбираются основные метрики для оценивания качества отслеживания объектов на видеоизображениях.
+\subsection{Метрика MOTA}
+\input{./chapters/review/1_mota}
+\subsection{Метрика IDF1}
+\input{./chapters/review/2_idf1}
+\subsection{Метрика HOTA}
+\input{./chapters/review/3_hota}
+
+\section{Обзор существующих алгоритмов}
+В данном разделе разбирается принцип работы выбранных для исследования алгоритмов.
+% Тут будут \cite{maggiolino2023deep, stadler2023improved}.
+\subsection{Алгоритм ByteTrack}
+\input{./chapters/review/4_bytetrack.tex}
+
+\subsection{Алгоритм OC-SORT}
+\input{./chapters/review/5_oc_sort.tex}
+
+\subsection{Алгоритм BoT-SORT}
+\input{./chapters/review/6_bot_sort.tex}
+
+\subsection{Алгоритм StrongSORT}
+\input{./chapters/review/7_StrongSORT.tex}
+
+\subsection{Алгоритм ImprAssOC}
+\input{./chapters/review/8_imprassoc.tex}
+
+\subsection{Алгоритм Deep OC-SORT}
+\input{./chapters/review/9_deep_oc.tex}
+
+\section{Выводы по главе}
+Во второй главе было рассмотрены:
+\begin{itemize}
+  \item[--] набор данных MOT17, на котором будет проводиться сравнение;
+  \item[--] метрики, принцип вычисления каждой и концептуальные отличия полученных оценок;
+  \item[--] разобран общий принцип работы методов отслеживания объектов на видеоизображениях, сравнение которых будет проведено в последующих главах.  
+\end{itemize}

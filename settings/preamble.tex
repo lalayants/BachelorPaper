@@ -1,18 +1,20 @@
 \documentclass[
 candidate, % document type
 subf, % use and configure subfig package for nested figure numbering
-times % use Times font as main
+times, % use Times font as main
 ]{disser}
 
 % Кодировка и язык
-\usepackage[T2A]{fontenc} % поддержка кириллицы
+\usepackage[T2A, T1]{fontenc} % поддержка кириллицы
 \usepackage[utf8]{inputenc} % кодировка исходного текста
 \usepackage[english,russian]{babel} % переключение языков
 
 % Геометрия страницы и графика
-\usepackage[left=3cm, right=1cm, top=2cm, bottom=2cm]{geometry} % поля страницы
+\usepackage[left=3cm, right=15mm, top=2cm, bottom=2cm]{geometry} % поля страницы
+\setlength{\parindent}{1.25cm}
 \usepackage{graphicx} % подключение графики
 \usepackage{pdfpages} % вставка pdf-страниц
+\usepackage{placeins}
 
 % Таблицы
 \usepackage{array} % расширенные возможности для работы с таблицами
@@ -27,6 +29,9 @@ times % use Times font as main
 % Библиография и ссылки
 \usepackage{cite} % поддержка цитирования
 \usepackage{hyperref} % создание гиперссылок
+% \usepackage[hidelinks, draft]{hyperref} % создание гиперссылок
+
+% \usepackage{nohyperref} 
 
 % Прочее
 \usepackage{color} % работа с цветом
@@ -37,6 +42,30 @@ times % use Times font as main
 \usepackage[onehalfspacing]{setspace} % полуторный интервал
 \usepackage{fancyhdr} % установка колонтитулов
 \usepackage{listings} % поддержка вставки исходного кода
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\DeclareCaptionLabelFormat{myfigure}{Рисунок~\thefigure\ --~}
+\captionsetup[figure]{
+  labelformat=myfigure,
+  labelsep=none,
+  justification=centering,
+  singlelinecheck=false,
+  format=plain,
+  skip=0pt,
+  font={stretch=1}
+}
+% Redefine the label format for tables: #2 is the table number.
+\DeclareCaptionLabelFormat{mytable}{Таблица~#2\ --~}
+\captionsetup[table]{
+  labelformat=mytable,       % Use our custom format
+  labelsep=none,
+  justification=raggedright, % Left-align the caption
+  singlelinecheck=false,     % Always use the provided justification
+  skip=0pt,                   % No extra vertical space after the caption
+  format=plain,
+  font={stretch=1}
+}
 
 % Установка шрифта Times New Roman
 \renewcommand{\rmdefault}{ftm}
