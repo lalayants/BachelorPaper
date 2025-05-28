@@ -11,6 +11,7 @@
 \usepackage{wrapfig} % Подключение пакета для обтекания текстом рисунков и таблиц
 \usepackage{array} % Подключение пакета для работы с таблицами
 \usepackage{booktabs}
+\usepackage{graphicx}
 
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp} % Команда для сохранения обратной косой черты в ячейках таблицы
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}} % Создание нового типа столбца с центрированным содержимым
@@ -74,6 +75,65 @@
   \end{center}
 \end{frame}
 
+% \begin{frame}{Актуальность}
+%   \textbf{Урбанистика:}
+%   \begin{itemize}
+%     \item Подсчёт автомобилей и анализ движения на городских улицах
+%   \end{itemize}
+%   \vspace{0.5cm}
+%   \centering
+%   \includegraphics[width=0.7\linewidth]{review/urban_uav.png}\\
+%   \small Урбанистический анализ с использованием БПЛА
+% \end{frame}
+
+% \begin{frame}{Актуальность}
+%   \textbf{Робототехника:}
+%   \begin{itemize}
+%     % \item Обеспечение навигации и безопасности
+%     \item Следование за объектом
+%   \end{itemize}
+%   \vspace{0.5cm}
+%   \centering
+%   \includegraphics[width=0.7\linewidth]{presentation/drone.jpg}\\
+%   \small Следование дрона за велосипедистом.
+% \end{frame}
+
+\begin{frame}{Актуальность}
+  \begin{columns}[t,onlytextwidth]  % top-align the columns overall
+    % First column, fixed height 0.7\textheight
+    \column{0.48\textwidth}
+      \vbox to 0.7\textheight{%
+        \textbf{Урбанистика}
+
+        \begin{itemize}
+          \item Анализ движения 
+        \end{itemize}
+
+        \vfill  % pushes the image to the bottom of the box
+        \centering
+        \includegraphics[width=\linewidth]{review/urban_uav.png}\\
+        \small Подсчет автомобилей и анализ движения
+      }
+
+    % Second column, same fixed height
+    \column{0.48\textwidth}
+      \vbox to 0.7\textheight{%
+        \textbf{Робототехника}
+
+        \begin{itemize}
+          \item Следование за объектом
+        \end{itemize}
+
+        \vfill  % pushes the image to the bottom of the box
+        \centering
+        \includegraphics[width=\linewidth,trim=0 30 0 9,clip]{presentation/drone.jpg}\\
+        \small Следование дрона за велосипедистом
+      }
+  \end{columns}
+\end{frame}
+
+
+
 \begin{frame}{Задача отслеживания}
   \begin{itemize}
     \item Обработка видеоизображений для извлечения информации об объектах:
@@ -88,31 +148,7 @@
         \item online и offline методы
         \item MOT\footnote{Отслеживание нескольких объектов (англ. Multiple Object Tracking)} и SOT\footnote{Отслеживание одного объекта (англ. Single Object Tracking)}
       \end{itemize}
-
   \end{itemize}
-\end{frame}
-
-\begin{frame}{Актуальность}
-  \textbf{Урбанистика:}
-  \begin{itemize}
-    \item Подсчёт автомобилей и анализ движения на городских улицах
-  \end{itemize}
-  \vspace{0.5cm}
-  \centering
-  \includegraphics[width=0.7\linewidth]{review/urban_uav.png}\\
-  \small Урбанистический анализ с использованием БПЛА
-\end{frame}
-
-\begin{frame}{Актуальность}
-  \textbf{Робототехника:}
-  \begin{itemize}
-    % \item Обеспечение навигации и безопасности
-    \item Следование за объектом
-  \end{itemize}
-  \vspace{0.5cm}
-  \centering
-  \includegraphics[width=0.7\linewidth]{presentation/drone.jpg}\\
-  \small Следование дрона за велосипедистом.
 \end{frame}
 
 \begin{frame}{Проблемы}
@@ -163,10 +199,10 @@
   \frametitle{Аналитический обзор}
   \framesubtitle{Датасет MOT17}
   \begin{itemize}
-    \item 14 сцен с пешеходами в реальной городской среде.
-    \item Сцены с разным углом съёмки, плотностью толпы, освещением.
-    \item Есть аннотации координат и ID на каждый кадр.
-    \item Применяется как стандарт для оценки трекеров.
+    \item 14 сцен с пешеходами.
+    \item Различные внешние условия.
+    % \item Есть аннотации координат и ID на каждый кадр.
+    \item Стандарт для оценки трекеров.
   \end{itemize}
   \centering
   \includegraphics[width=0.7\linewidth]{images/review/MOT17_1.jpg}\\
@@ -268,7 +304,6 @@
   \begin{itemize}
     \item Значительного влияния ReID-модель не оказывает. Показатели качества незначительно колеблются.
   \end{itemize}
-  % Placeholder: метрики IDF1, HOTA для разных ReID
   \centering
   \includegraphics[width=0.7\linewidth]{images/plots/yolo_size_and_reid_vs_metric/BoT-SORT.png}\\
   \small Результаты эксперимента для алгоритма BoT-SORT.
@@ -282,7 +317,6 @@
     \item 5-11 кадров/с — менее выраженный рост
     \item Выше 11 кадров/с нет значимого улучшения
   \end{itemize}
-  % Placeholder: график HOTA, MOTA от FPS
   \centering
   \includegraphics[width=0.7\linewidth]{images/plots/fps_vs_metric/ByteTrack.png}\\
   \small Результаты эксперимента для алгоритма ByteTrack.
@@ -340,6 +374,7 @@
 \end{frame}
 
 \begin{frame}{Заключение}
+  В ходе работы выполнены следующие задачи:
   \begin{itemize}
     \item Изучены современные алгоритмы трекинга.
     \item Собран экспериментальный стенд на Raspberry Pi 5 с TPU.
@@ -352,6 +387,16 @@
 
 \begin{frame}
   \centering \Huge \textcolor{blue}{Спасибо за внимание!}
+\end{frame}
+
+\begin{frame}[noframenumbering]
+  \frametitle{Эксперименты}
+  \framesubtitle{Тепловая карта для YOLOv8n на размере изображения 512.}
+  Тепловая карта: показатели качества интерполированы в соответствии с частотой работы на микрокомпьютере. 
+
+  \centering
+  \includegraphics[width=\linewidth]{images/plots/heatmap_fps_hota_vs_tracker_reid/heatmap_fps_hota_yolov8n_size512.png}\\
+  \small Тепловая карта для YOLOv8n на размере изображения 512.
 \end{frame}
 
 \end{document}
