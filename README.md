@@ -1,3 +1,12 @@
+# Моя ВКР
+ВКР бакалавра факультета СУиР 2025.
+- diploma.pdf -- ВКР
+- presentation.pdf -- презентация с защиты
+- review.pdf -- отзыв научного руководителя
+
+[Шаблон](https://github.com/NikitaDmitryuk/ThesisMagistr)
+======================================
+
 ![build](https://img.shields.io/github/actions/workflow/status/NikitaDmitryuk/ThesisMagistr/main.yml)
 ![downloads](https://img.shields.io/github/downloads/NikitaDmitryuk/ThesisMagistr/total)
 ![release](https://img.shields.io/github/v/release/NikitaDmitryuk/ThesisMagistr?display_name=tag)
